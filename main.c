@@ -1,10 +1,10 @@
 #include "libft.h"
-#include <bsd/string.h>
+#include <string.h>
 #include <stdio.h>
 
 int    main(void)
 {
-    printf("//test ft_memmove :// \n\n");
+   /* printf("//test ft_memmove :// \n\n");
     
     char    str[] = "Start stop";
     char    *dest = str;
@@ -72,5 +72,69 @@ int    main(void)
 	printf("%s\n", strcmp(s5a, s5b) == 0 && strcmp(s6a, s6b) == 0 ? "Success" : "Fail");
 	printf("%s\n", ft_strlcat(s7a, s8a, 0) == strlcat(s7b, s8b, 0) ? "Success" : "Fail");
 	printf("%s\n", strcmp(s7a, s7b) == 0 && strcmp(s8a, s8b) == 0 ? "Success" : "Fail");
+
+	printf("\n\n//test ft_strchr :// \n\n");
+	printf("strchr == %s\n", strchr("testreussi", 'r')); 
+	printf("ft_strchr == %s", ft_strchr("testreussi", 'r')); 
+	
+	printf("\n\n//test ft_strrchr :// \n\n");
+	printf("strrchr == %s\n", strrchr("testreussi", 's')); 
+	printf("ft_strrchr == %s", ft_strrchr("testreussi", 's'));*/
+
+	printf("\n\n//test ft_memchr :// \n\n");
+	/*char tabc[] = "test reussi";
+	printf("tab char original: %s\n", tabc);
+	printf("memchr == %s\n", memchr (tabc, 'r', ft_strlen(tabc));
+	printf("ft_memchr == %s\n", ft_memchr (tabc, 'r', ft_strlen(tabc));*/
+	
+	/*char str[] = "ABCDEFG";
+	char *ps = memchr(str,'D',strlen(str));
+	if (ps != NULL)
+		printf ("search character found:  %s\n", ps);
+	else
+		printf ("search character not found\n");
+
+ 	char str2[] = "ABCDEFG";
+	char *ps2 = ft_memchr(str,'D',strlen(str));
+	if (ps2 != NULL)
+		printf ("search character found:  %s\n", ps2);
+	else
+		printf ("search character not found\n");*/
+
+
+	printf("\n\n//test ft_memcmp :// \n\n");
+	char str1[15];
+	char str2[15];
+	int ret;
+
+	memcpy(str1, "abcdef", 6);
+	memcpy(str2, "ABCDEF", 6);
+
+	ret = memcmp(str1, str2, 5);
+
+	if(ret > 0) {
+		printf("str2 is less than str1\n\n");
+	} else if(ret < 0) {
+		printf("str1 is less than str2\n\n");
+	} else {
+		printf("str1 is equal to str2\n\n");
+	}
+	
+	char str3[15];
+	char str4[15];
+	int ret2;
+
+	memcpy(str3, "abcdef", 6);
+	memcpy(str4, "ABCDEF", 6);
+
+	ret2 = ft_memcmp(str3, str4, 5);
+
+	if(ret > 0) {
+		printf("str4 is less than str3");
+	} else if(ret < 0) {
+		printf("str3 is less than str4");
+	} else {
+		printf("str3 is equal to str4");
+	}
 	return (0);
 }
