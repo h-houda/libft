@@ -1,6 +1,7 @@
 #include "libft.h"
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int    main(void)
 {
@@ -103,7 +104,7 @@ int    main(void)
 
 
 	printf("\n\n//test ft_memcmp :// \n\n");
-	char str1[15];
+	/*char str1[15];
 	char str2[15];
 	int ret;
 
@@ -135,6 +136,83 @@ int    main(void)
 		printf("str3 is less than str4");
 	} else {
 		printf("str3 is equal to str4");
+	}*/
+	
+	printf("\n\n//test ft_strnstr :// \n\n");
+
+	char big[] = "nalaestunchat";
+	char little[] = "zozochat";
+
+	printf("strstr == %s\n", strstr(big, little));
+	printf("ft_strnstr == %s", ft_strnstr(big, little, ft_strlen(big)));
+	
+	printf("\n\n//test ft_atoi :// \n\n");
+
+	printf("atoi == %d\n", atoi("--++552qqa"));
+	printf("ft_atoi == %d\n", ft_atoi("--++552qqa"));
+	printf("atoi == %d\n", atoi("--+78"));
+	printf("ft_atoi == %d\n", ft_atoi("--+78"));
+	printf("atoi == %d\n", atoi("-50"));
+	printf("ft_atoi == %d\n", ft_atoi("-50"));
+
+	printf("\n\n//test ft_strcpy :// \n\n");
+	char dest[] = "Epic fail";
+	char src[] = "Success";
+	printf("Must all be same (3 lines):\n%s\n%s\n%s\n", src, ft_strcpy(dest, src), dest);
+	char dest1[] = "";
+	char src1[] = "";
+	ft_strcpy(dest1, src1);
+
+
+	printf("\n\n//test ft_strdup :// \n\n");
+	printf("%s\n", strcmp(strdup("Test"), ft_strdup("Test")) == 0 ?
+			"OK" :
+			"Fail");
+	printf("%s\n", strcmp(strdup("484df41hdy1h111fs1fsd15sf15sdf115d15fdgs15gfd4sg1615df156g1515g4erg4561esg156gr15156g15eg15eg15e51e51g1515ge156e156eg156e15156ge516e1551eg51eg15g1551eg15e516eg15e15eg1515e55eg51e15e51g5151eg15eg1515egr515151erg51er51e51e551ee5eg51egr51er51er5er5eg51e5r1e51rg5egr5eg51erg5e1r51e6rg51egr516ee5g15e1g5e1g5e1g51ger51egr51erg55reg5er55er55"), ft_strdup("484df41hdy1h111fs1fsd15sf15sdf115d15fdgs15gfd4sg1615df156g1515g4erg4561esg156gr15156g15eg15eg15e51e51g1515ge156e156eg156e15156ge516e1551eg51eg15g1551eg15e516eg15e15eg1515e55eg51e15e51g5151eg15eg1515egr515151erg51er51e51e551ee5eg51egr51er51er5er5eg51e5r1e51rg5egr5eg51erg5e1r51e6rg51egr516ee5g15e1g5e1g5e1g51ger51egr51erg55reg5er55er55")) == 0 ?
+			"OK" :
+			"Fail");
+
+	
+	printf("\n\n//test calloc :// \n\n");
+	int *p1 = calloc(4, sizeof(int));    // allocate and zero out an array of 4 int
+	int *p2 = calloc(1, sizeof(int[4])); // same, naming the array type directly
+	int *p3 = calloc(4, sizeof *p3);     // same, without repeating the type name
+
+	if(p2) {
+		for(int n=0; n<4; ++n) // print the array
+			printf("p2[%d] == %d\n", n, p2[n]);
 	}
-	return (0);
+
+	free(p1);
+	free(p2);
+	free(p3);
+
+	printf("\n\n//test ft_calloc :// \n\n");
+	int *p4 = ft_calloc(4, sizeof(int));    // allocate and zero out an array of 4 int
+	int *p5 = ft_calloc(1, sizeof(int[4])); // same, naming the array type directly
+	int *p6 = ft_calloc(4, sizeof *p6);     // same, without repeating the type name
+
+	//printf("%p\n", p5);
+	if(p5) {
+		for(int n=0; n<4; ++n) // print the array
+			printf("p5[%d] == %d\n", n, p5[n]);
+	}
+
+	free(p4);
+	free(p5);
+	free(p6);
+
+	printf("\n\n//test ft_substr :// \n\n");
+
+	char tab[] = "Nalaestunchat";
+	printf("ft_substr '%s', 4, 3 == %s\n",tab, ft_substr(tab, 4, 3));
+	char tab2[] = "chat";
+	printf("ft_substr '%s', 4, 5 == %s\n",tab2, ft_substr(tab2, 4, 5));
+	char tab3[] = "";
+	printf("ft_substr '%s', 0, 0 == %s\n",tab3, ft_substr(tab3, 0, 0));
+	char tab4[] = "estunchat";
+	printf("ft_substr '%s', 3, 10 == %s\n",tab, ft_substr(tab4, 3, 10));
+
+
+return (0);
 }
