@@ -7,14 +7,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 
 	i = 0;
 	if (*little == '\0')
-		return (big);
+		return ((char*)big);
 	while (big[i] && i < n)
 	{
 		j = 0;
-		while (little[j] == big[i + j])
+		while (little[j] == big[i + j] && (i + j) < n)
 		 {
 			if (little[j + 1] == '\0')
-			return (&big[i]);
+			return ((char*)&big[i]);
 			j++;
 		 }
 		i++;

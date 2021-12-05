@@ -12,18 +12,8 @@
 
 int ft_isdigit(int c)
 {
-	if (c >= '1' && c <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);
 }
-
-/*#include <ctype.h>
-#include <stdio.h>
-
-int main (int argc, char **argv)
-{
-	printf("fonction originale : %d\n", isdigit(argv[1][0]));
-	printf("fonction ft : %d", ft_isdigit(argv[1][0])); 
-	return (0);
-}*/

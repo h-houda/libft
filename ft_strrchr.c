@@ -10,8 +10,11 @@ char *ft_strrchr (const char *s, int c)
 
 	while (s[i])
 	{
-		if (s[len - 1 - i] == c)
-			return (&s[len - 1 - i]);
+	if (s[len - 1 - i] == (char) c)
+			return ((char*) &s[len - 1 - i]);
 		i++;
 	}
+	if (s[i] == (char) c)
+		return ((char*)s + i);
+	return (0);
 }

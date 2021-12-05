@@ -19,13 +19,3 @@ int	ft_isalnum (int c)
 	else
 		return (0);
 }
-
-/*#include <ctype.h>
-#include <stdio.h>
-
-int main (int argc, char **argv)
-{
-	printf("fonction originale : %d\n", isalnum(argv[1][0]));
-	printf("fonction ft : %d", ft_isalnum(argv[1][0])); 
-	return (0);
-}*/

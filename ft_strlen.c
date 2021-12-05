@@ -20,12 +20,5 @@ size_t ft_strlen(const char *str)
 	i = 0;
 	while (str[i])
 		i++;
-		return (i);
+	return (i);
 }
-
-/*#include <stdio.h>
-int main (int argc, char **argv)
-{
-	printf("len = %ld", ft_strlen(argv[1]));
-	return (0);
-}*/
