@@ -44,6 +44,18 @@ char	*create_substring(char const *str, char c)
 	return (substring);
 }
 
+char	**free_allocated_substrings(char **allstrings, int nb_allocated)
+{
+	int	i = 0;
+
+	while (i < nb_allocated)
+	{
+		free(allstrings[i]);
+		i++;
+	}
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int	i;
@@ -53,13 +65,15 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	nbstrings = string_count((char*)s, c);
 	allstrings = (char**) malloc(sizeof(char*) * (nbstrings + 1));
-		if (!allstrings || !s)
+	if (!allstrings || !s)
 		return (NULL);
 	while (i < nbstrings)
 	{
 		while (s[0] == c)
 			s++;
 		allstrings[i] = create_substring((char*)s, c);
+		if (allstrings[i] == NULL)
+			return (free_allocated_substrings(allstrings, i));
 		s = s + ft_strlen(allstrings[i]);
 		i++;
 	}

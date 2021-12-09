@@ -12,14 +12,13 @@ RM			= rm -f
 
 NAME		= libft.a
 
-%.o: %.c $(HDRS)
-	$(CC) -c -o $@ $< $(CFLAGS)
-
-
 all:		$(NAME)
 
 $(NAME):	$(OBJS) $(HDRS)
 			ar rc $(NAME) $(OBJS)
+
+%.o: %.c $(HDRS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 clean:
 			$(RM) $(OBJS)

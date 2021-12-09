@@ -30,7 +30,7 @@ char	*ft_itoa(int n)
 	size = get_size(n);
 	ln = n;
 	i = 1;
-	result = (char*) malloc(sizeof(char) * size + 1);
+	result = (char*) malloc(sizeof(char) * (size + 1));
 	if (!result)
 		return (NULL);
 	if (n < 0)
@@ -48,4 +48,3 @@ char	*ft_itoa(int n)
 	result[size - i] = (ln % 10) + '0';
 	return (result);
 }
-
