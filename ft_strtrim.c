@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hhouda <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/10 14:10:46 by hhouda            #+#    #+#             */
+/*   Updated: 2021/12/10 15:15:02 by hhouda           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int check_set(char c, char const *set)
+int	check_set(char c, char const *set)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (set[i])
@@ -14,12 +26,12 @@ int check_set(char c, char const *set)
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;
 	size_t	i;
 	size_t	j;
-	char	*res; 
+	char	*res;
 
 	len = ft_strlen(s1);
 	i = 0;
@@ -27,7 +39,7 @@ char *ft_strtrim(char const *s1, char const *set)
 		i++;
 	while (i < len && check_set(s1[len - 1], set))
 		len--;
-	res = (char*)malloc(sizeof(char) * (len - i) + 1);
+	res = (char *)malloc(sizeof(char) * (len - i) + 1);
 	if (!res || !s1)
 		return (NULL);
 	if (!set)
