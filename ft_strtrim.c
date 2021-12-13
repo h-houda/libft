@@ -6,13 +6,13 @@
 /*   By: hhouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 14:10:46 by hhouda            #+#    #+#             */
-/*   Updated: 2021/12/10 15:15:02 by hhouda           ###   ########.fr       */
+/*   Updated: 2021/12/13 17:01:47 by hhouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_set(char c, char const *set)
+static int	check_set(char c, char const *set)
 {
 	size_t	i;
 

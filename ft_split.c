@@ -6,13 +6,13 @@
 /*   By: hhouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:56:03 by hhouda            #+#    #+#             */
-/*   Updated: 2021/12/10 15:08:01 by hhouda           ###   ########.fr       */
+/*   Updated: 2021/12/13 16:55:56 by hhouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	string_count(char const *str, char c)
+static int	string_count(char const *str, char c)
 {
 	int	i;
 	int	count;
@@ -40,7 +40,7 @@ int	string_count(char const *str, char c)
 	return (count + string);
 }
 
-char	*create_substring(char const *str, char c)
+static char	*create_substring(char const *str, char c)
 {
 	size_t	start;
 	char	*substring;
@@ -55,7 +55,7 @@ char	*create_substring(char const *str, char c)
 	return (substring);
 }
 
-char	**free_allocated_substrings(char **allstrings, int nb_allocated)
+static char	**free_allocated_substrings(char **allstrings, int nb_allocated)
 {
 	int	i;
 

@@ -6,13 +6,13 @@
 /*   By: hhouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:47:45 by hhouda            #+#    #+#             */
-/*   Updated: 2021/12/10 14:57:44 by hhouda           ###   ########.fr       */
+/*   Updated: 2021/12/13 16:59:19 by hhouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_size(int n)
+static int	get_size(int n)
 {
 	int			count;
 	long int	ln;
